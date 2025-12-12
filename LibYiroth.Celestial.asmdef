@@ -1,0 +1,17 @@
+{
+    "name": "LibYiroth.Celestial",
+    "rootNamespace": "LibYiroth.Celestial",
+    "references": [
+        "GUID:a5a511adc6762ea4b999421f0be7b855",
+        "GUID:4703e8c27ee5a1d4f8bae7178ed17962",
+        "GUID:38e73918b09b001469f9a9388072b54c"
+    ],
+    "includePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
