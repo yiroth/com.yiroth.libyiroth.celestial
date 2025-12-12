@@ -6,6 +6,7 @@
 
 using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 using LibYiroth;
 
 namespace LibYiroth.Celestial
@@ -39,8 +40,7 @@ namespace LibYiroth.Celestial
         private Data.Time _time;
         private float _totalSeconds = 0;
 
-        private const float _secondsPerDay = 86400.0f;
-        private static readonly int[] _selectiveMonth = {1, 3, 5, 7, 8, 10, 12};
+        private const float secondsPerDay = 86400.0f;
         private static readonly HashSet<int> SelectiveMonth = new() { 1, 3, 5, 7, 8, 10, 12 };
 
         private void Start()
