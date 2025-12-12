@@ -40,7 +40,7 @@ namespace LibYiroth.Celestial
         private float _totalSeconds = 0;
 
         private const float _secondsPerDay = 86400.0f;
-        private const int[7] _selectiveMonth = [1, 3, 5, 7, 8, 10, 12];
+        private static readonly int[] _selectiveMonth = [1, 3, 5, 7, 8, 10, 12];
 
         private void Start()
         {
