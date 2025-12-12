@@ -83,10 +83,10 @@ namespace LibYiroth.Celestial
             while (shouldUpdateTime)
             {
                 float mRealTimeSeconds = GetRealtimeMinutesPerCycle() * 60.0f;
-	            float mAddition = (_secondsPerDay / mRealTimeSeconds) / 24.0f;
+	            float mAddition = (secondsPerDay / mRealTimeSeconds) / 24.0f;
 
 	            _totalSeconds += mAddition;
-	            if (_totalSeconds >= _secondsPerDay)
+	            if (_totalSeconds >= secondsPerDay)
 	            {
 	            	_totalSeconds = 0;
                     
