@@ -41,6 +41,7 @@ namespace LibYiroth.Celestial
 
         private const float _secondsPerDay = 86400.0f;
         private static readonly int[] _selectiveMonth = {1, 3, 5, 7, 8, 10, 12};
+        private static readonly HashSet<int> SelectiveMonth = new() { 1, 3, 5, 7, 8, 10, 12 };
 
         private void Start()
         {
@@ -88,9 +89,9 @@ namespace LibYiroth.Celestial
 	            if (_totalSeconds >= _secondsPerDay)
 	            {
 	            	_totalSeconds = 0;
-
-	            	if (_date.GetDays() == _selectiveMonth.Contains(_date.GetMonths()) ? 31 : 30)
-	            	{
+                    
+                    if (_date.GetDays() == (SelectiveMonth.Contains(_date.GetMonths()) ? 31 : 30))
+                    {
 	            		_date.SetDays(1);
 
 	            		if (_date.GetMonths() == 12)
