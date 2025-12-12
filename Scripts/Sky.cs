@@ -16,11 +16,11 @@ namespace LibYiroth.Celestial
         
         [Min(0)]
         public int year;
-        [Range(1, 13)]
+        [Range(1, 12)]
         public int month;
-        [Range(1, 28)]
+        [Range(1, 31)]
         public int day;
-        [Range(0, 59)]
+        [Range(0, 23)]
         public int hour;
         [Range(0, 59)]
         public int minute;
@@ -38,6 +38,9 @@ namespace LibYiroth.Celestial
         private Data.Date _date;
         private Data.Time _time;
         private float _totalSeconds = 0;
+
+        private const float _secondsPerDay = 86400.0f;
+        private const int[7] _selectiveMonth = [1, 3, 5, 7, 8, 10, 12];
 
         private void Start()
         {
@@ -66,8 +69,9 @@ namespace LibYiroth.Celestial
         {
             while (shouldUpdateVisuals)
             {
-                // Update visual elements here
                 float mSolarHour = (float)_time.GetTotalSeconds() / 3600.0f;
+
+                // TODO: Curve based visual update here
 
                 yield return new WaitForSeconds(Helper.TimeRate.GetTimeRateValue(visualUpdateRate));
             }
@@ -78,18 +82,18 @@ namespace LibYiroth.Celestial
             while (shouldUpdateTime)
             {
                 float mRealTimeSeconds = GetRealtimeMinutesPerCycle() * 60.0f;
-	            float mAddition = (86400.0f / mRealTimeSeconds) / 24.0f;
+	            float mAddition = (_secondsPerDay / mRealTimeSeconds) / 24.0f;
 
 	            _totalSeconds += mAddition;
-	            if (_totalSeconds >= 86400.0f)
+	            if (_totalSeconds >= _secondsPerDay)
 	            {
 	            	_totalSeconds = 0;
 
-	            	if (_date.GetDays() == 28)
+	            	if (_date.GetDays() == _selectiveMonth.Contains(_date.GetMonths()) ? 31 : 30)
 	            	{
 	            		_date.SetDays(1);
 
-	            		if (_date.GetMonths() == 13)
+	            		if (_date.GetMonths() == 12)
 	            		{
 	            			_date.SetMonths(1);
 
