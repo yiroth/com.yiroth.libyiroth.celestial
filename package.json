@@ -1,0 +1,11 @@
+{
+  "name": "com.yiroth.libyiroth.celestial",
+  "displayName": "LibYiroth - Celestial",
+  "author": {
+    "name": "yiroth"
+  },
+  "version": "0.0.1",
+  "unity": "6000.3",
+  "description": "LibYiroth, Celestial",
+  "relatedPackages": {}
+}
