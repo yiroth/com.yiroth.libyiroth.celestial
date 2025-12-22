@@ -19,7 +19,6 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
-using LibYiroth;
 
 namespace LibYiroth.Celestial
 {
@@ -123,7 +122,7 @@ namespace LibYiroth.Celestial
 	            	}
 	            }
 
-	            Data.Time tod = Helper.TimeRate.GetTimeFromSeconds((int)_totalSeconds);
+	            Data.Time tod = Data.Time.GetTimeFromSeconds((int)_totalSeconds);
 
                 _time.SetHours(tod.GetHours());
                 _time.SetMinutes(tod.GetMinutes());
