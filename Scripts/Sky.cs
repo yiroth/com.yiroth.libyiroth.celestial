@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *
- * Purpose: Sky component to manage both time of day and visual changes
+ * Purpose: A component for processing visual changes of the sky, and handling the time of day
  */
 
 using UnityEngine;
